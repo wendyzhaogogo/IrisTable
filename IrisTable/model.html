@@ -1,0 +1,84 @@
+﻿<div style="overflow: auto; border:1px solid #EDEDED;width:{{mainFrame.width}};height:{{mainFrame.height}};">
+    <div style="width:{{innerFrame.Width}};height:auto;">
+        <div class="fixedTable-head" style="width:auto;height:{{head.height}};">
+            <table class="table" style="height:100%;">
+                <tbody style="height:100%;">
+                    <tr style="height:100%;">
+                        <th ng-repeat=" columninfo in columnInfos" style="width: {{columninfo.cellWidth}}"> {{columninfo.text}}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="fixedTable-body" style="width:auto;height:{{body.height}};">
+            <table class="table">
+                <tbody style="height:100%;">
+                    <tr ng-repeat=" t in dataList" style="height:{{row.height}};">
+                        <td ng-repeat="columninfo in columnInfos" style="width:{{columninfo.cellWidth}}">{{t[columninfo.key]}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="fixedTable-bottom">
+        </div>
+    </div>
+    <style>
+        /*重写bootstrap部分样式*/
+        
+        .table {
+            margin: 0px;
+        }
+        
+        .fixedTable-head>table {
+            height: auto;
+            width: auto;
+        }
+        
+        .fixedTable-body {
+            border: 1px solid white;
+            overflow: auto;
+        }
+        
+        .fixedTable-head {
+            border: 1px solid white;
+        }
+        
+        .fixedTable-bottom {}
+        
+        .fixedTable-body>table {
+            height: auto;
+            width: auto;
+        }
+        
+        .fixedTable-body .table tr:nth-child(odd) {
+            background-color: #EDEDED;
+        }
+        
+        .fixedTable-body .table tr:nth-child(even) {}
+        
+        .fixedTable-head .table tr {
+            background-color: #DFEFFF;
+        }
+        
+        .fixedTable-body .table tr:hover {
+            background-color: #CFE9F1;
+        }
+        
+        .fixedTable-head .table>thead>tr>th,
+        .fixedTable-head .table>tbody>tr>th,
+        .fixedTable-head .table>tfoot>tr>th {
+            vertical-align: middle;
+            text-align: center;
+            padding: 2px;
+            border: 1px white solid;
+        }
+        
+        .fixedTable-body .table>thead>tr>td,
+        .fixedTable-body .table>tbody>tr>td,
+        .fixedTable-body .table>tfoot>tr>td {
+            vertical-align: middle;
+            text-align: center;
+            padding: 2px;
+            border: 1px white solid;
+        }
+    </style>
+</div>

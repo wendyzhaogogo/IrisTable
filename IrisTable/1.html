@@ -1,0 +1,336 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="gb2312" />
+    <title></title>
+    <script src="Scripts/angular/angular.js"></script>
+    <script src="Scripts/angular/angular-animate.min.js"></script>
+    <script src="Scripts/angular/angular-aria.min.js"></script>
+    <script src="Scripts/angular/angular-cookies.min.js"></script>
+    <link href="Scripts/angular/angular-csp.css" rel="stylesheet" />
+    <script src="Scripts/angular/angular-file-upload.min.js"></script>
+    <script src="Scripts/angular/angular-loader.min.js"></script>
+    <script src="Scripts/angular/angular-message-format.min.js"></script>
+    <script src="Scripts/angular/angular-messages.min.js"></script>
+    <script src="Scripts/angular/angular-mocks.js"></script>
+    <script src="Scripts/angular/angular-resource.min.js"></script>
+    <script src="Scripts/angular/angular-route.min.js"></script>
+    <script src="Scripts/angular/angular-sanitize.min.js"></script>
+    <script src="Scripts/angular/angular-scenario.js"></script>
+    <script src="Scripts/angular/angular-touch.min.js"></script>
+    <script src="Scripts/angular/angular-ui-router.js"></script>
+    <script src="Scripts/angular/angular-ui-tree.min.js"></script>
+    <script src="Scripts/jquery-1.11.1.min.js"></script>
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    
+    <style>
+        .table {
+            width: auto;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body ng-app="myapp" ng-controller="mycontroller" style="display: flex; align-items: center; justify-content: center;">
+    <script>
+        var app = angular.module("myapp", ['ngRoute', 'ngCookies', 'ngMessages', 'ngAnimate', 'ngLocale', 'ngSanitize', 'angularFileUpload',
+            'ui.tree', 'ui.router']);
+        var myctrl = app.controller("mycontroller", function ($scope) {
+            $scope.tableConfig = {
+                options: {
+                    mainFrame: {
+                        height: "auto",
+                        width: "900px"
+                    },
+                    head: {
+                        height: "50px"
+                    },
+                    body: {
+                        height: "500px"
+                    },
+                    row: {
+                        height: "200px"
+                    },
+                    scrollbarWidthPx: 20
+                },
+                data: {
+                    columnInfos: [{
+                        key: "column1",
+                        text: "列1",
+                        cellWidth: "200px"
+                    },
+                    {
+                        key: "column2",
+                        text: "列2",
+                        cellWidth: "200px"
+                    },
+                    {
+                        key: "column3",
+                        text: "列3",
+                        cellWidth: "200px"
+                    },
+                    {
+                        key: "column4",
+                        text: "列4",
+                        cellWidth: "200px"
+                    }
+                    ],
+                    dataList: [
+                        // {
+                        //     column1: "100",
+                        //     column2: "100",
+                        //     column3: "100",
+                        // },
+                        // {
+                        //     column1: "200",
+                        //     column2: "200",
+                        //     column3: "200",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        // {
+                        //     column1: "300",
+                        //     column2: "300",
+                        //     column3: "300",
+                        // },
+                        {
+                            column1: "30",
+                            column2: "300",
+                            column3: "300",
+                        },
+                        {
+                            column1: "300",
+                            column2: "30",
+                            column3: "300",
+                        },
+                        {
+                            column1: "300",
+                            column2: "300",
+                            column3: "30",
+                        },
+                        {
+                            column1: "300",
+                            column2: "300",
+                            column3: "300",
+                        },
+                        {
+                            column1: "300",
+                            column2: "30",
+                            column3: "30",
+                        }
+                    ]
+                }
+            }
+            $scope.clickme = function () {
+                $scope.tableConfig.data.dataList.push({
+                    column1: "100",
+                    column2: "100",
+                    column3: "10",
+                    column4: "20"
+                });
+            }
+            $scope.clickme2 = function () {
+                $scope.tableConfig.data.dataList.pop();
+            }
+        });
+        app.directive("fixedTable", function ($window) {
+            return {
+                restrict: 'E',
+
+                replace: true,
+                templateUrl: 'model.html',
+                scope: {
+                    tableConfig: "=?"
+                },
+                link: function (scope, element, attrs) {
+                    if (!scope.tableConfig) return;
+
+                    var tableConfig = scope.tableConfig;
+
+                    scope.dataList = getDataList(tableConfig);
+                    scope.columnInfos = getColumnInfos(tableConfig);
+                    scope.mainFrame = getMainFrame(tableConfig);
+                    scope.head = getHead(tableConfig);
+                    scope.body = getBody(tableConfig);
+                    scope.row = getRow(tableConfig);
+                    scope.innerFrame = getInnerFrame(tableConfig);
+
+                    //private method
+                    function getDataList(config) {
+                        return config.data.dataList;
+                    }
+
+                    function getColumnInfos(config) {
+                        return config.data.columnInfos;
+                    }
+
+                    function getMainFrame(config) {
+                        return config.options.mainFrame;
+                    }
+
+                    function getBody(config) {
+                        return config.options.body;
+                    }
+
+                    function getHead(config) {
+                        return config.options.head;
+                    }
+
+                    function getRow(config) {
+                        return config.options.row;
+                    }
+
+                    function getInnerFrame(config) {
+                        var width_int = 0;
+                        width_int += config.options.scrollbarWidthPx;
+                        angular.forEach(config.data.columnInfos, function (v, i) {
+                            width_int += parseInt(v.cellWidth);
+                        });
+                        return {
+                            Width: width_int + "px"
+                        }
+                    }
+
+                    function getDefaultConfig() {
+                        return {
+                            options: {
+                                mainFrame: {
+                                    height: "auto",
+                                    width: "500px"
+                                },
+                                head: {
+                                    height: "50px"
+                                },
+                                body: {
+                                    height: "500px"
+                                },
+                                row: {
+                                    height: "39px"
+                                },
+                                scrollbarWidthPx: 20
+                            },
+                            data: {
+                                columnInfos: [
+                                    {
+                                        key: "column1",
+                                        text: "列1",
+                                        cellWidth: "200px"
+                                    }
+                                ],
+                                dataList: [
+                                    {
+                                        column1: "30",
+                                        column2: "300",
+                                        column3: "300",
+                                    }
+                                ]
+                            }
+                        }
+                    }
+
+                }
+            }
+        })
+    </script>
+    <input type="button" ng-click="clickme()" value="1">
+    <input type="button" ng-click="clickme2()" value="2">
+    <div>
+        <fixed-table class="fixed" table-config="tableConfig">
+
+        </fixed-table>
+    </div>
+
+</body>
+
+</html>
